@@ -18,50 +18,159 @@
     <div class="box">
         <div class="row">
 
+					<!-- sidebar -->
+					<div class="column col-sm-3" id="sidebar">
 
+							<ul class="nav text-center">
+									<li>
+										<h3>Health Info Connect</h3>
+										<!--<a href="http://www.makeloft.org/" target="_blank" >by MakeLofT</a>-->
+									</li>
+									<li>
+									<p><i>Enter your symptoms and we'll connect you with more information and suggest what to bring up with your doctor.</i></p>
+									</li>
+
+									<div class="row">
+										<div class="col-sm-12">
+											<form method="post">
+												<div class="form-group">
+													<label for="exampleTextarea">Symptoms</label>
+													<textarea class="form-control" id="exampleTextarea" rows="5" placeholder="Enter your symptoms as you would describe them to a doctor" name="content"></textarea>
+												</div>
+												<button type="submit" class="btn btn-primary pull-right" style="background:#E2A675;color:white">Search</button>
+											</form>
+										</div>
+									</li>
+
+
+							</ul>
+
+
+					</div>
+					<!-- /sidebar -->
 
             <!-- main -->
-            <div class="column col-sm-12" id="main">
+            <div class="column col-sm-9" id="main">
                 <div class="padding">
-                    <div class="full col-sm-12">
+                    <div class="full col-sm-9">
 
                         <!-- content -->
 
 
-                        <div class="row">
-                          <div class="col-sm-12"><a href="http://www.makeloft.org/" target="_blank" class="btn btn-default navbar-btn" style="float:right;background:#E2A675;color:white">by MakeLofT</a>
-                            <h3>Connectivity of </h3>
-                            <p>Mockup of the force graph part of the app</p>
-                          </div>
 
-                        </div>
 
-                         </div>
-                        <div class="row divider">
-                           <div class="col-sm-12"><hr></div>
-                        </div>
 
-                        <div class="row">
-                          <div class="col-sm-8">
-                            <h4><strong>Connectivity of Dermatology</strong></h4>
-                            <p>click to expand; hover for description; drag around for fun</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												<div class="row" id="forcegraphcontainer" >
+													<div class="col-sm-8">
+														<h4>Closely Related Conditions</h4>
                           </div>
                           <div class="col-sm-4">
-                          <h4><span class="label label-default"><a href="http://bl.ocks.org/mbostock/1062288" target="_blank">Force Plot</a></span></h4><h4>
-                            <small id="interestDiv" class="text-muted2"  > This graph illustrates the connections between my interests in computing, biomaterials, sustainability, and public outreach.
-
+                            <small id="interestDiv" class="text-muted2"  >
+																Enter your information to find out what other people have written regarding this condition.
                             </small>
                             <small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Read More</a></small>
                             </h4>
                           </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-sm-12" id="forcegraph">
-
-                          </div>
+                          <div  class="col-sm-12" id="forcegraph" ></div>
 
                         </div>
+
+                        <div class="row divider">
+                           <div class="col-sm-12"><hr></div>
+                        </div>
+
+												<div class="row" id="forumlistcontainer" >
+													<div class="col-sm-8">
+														<h4>Similar Experiences</h4>
+													</div>
+													<div class="col-sm-4">
+														<small id="interestDiv" class="text-muted2"  >
+																Click a post to jump to that page.
+														</small>
+														<small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Read More</a></small>
+														</h4>
+													</div>
+
+													<div class="col-sm-12">
+
+												  <ul class="timeline">
+												    <li>
+												      <a>
+																<div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+													      <div class="timeline-panel">
+													        <div class="timeline-heading">
+													          <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+													          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+													        </div>
+													        <div class="timeline-body">
+													          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+													            Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+													        </div>
+													      </div>
+															</a>
+												    </li>
+												    <li class="timeline-inverted">
+												      <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+												      <div class="timeline-panel">
+												        <div class="timeline-heading">
+												          <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+												        </div>
+												        <div class="timeline-body">
+												          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+												            Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+												          <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere
+												            pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet mé vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+												            elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.</p>
+												        </div>
+												      </div>
+												    </li>
+												    <li class="timeline-inverted">
+												      <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
+												      <div class="timeline-panel">
+												        <div class="timeline-heading">
+												          <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+												        </div>
+												        <div class="timeline-body">
+												          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+												            Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+												        </div>
+												      </div>
+												    </li>
+												    <li class="timeline-inverted">
+												      <div class="timeline-panel">
+												        <div class="timeline-heading">
+												          <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+												        </div>
+												        <div class="timeline-body">
+												          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+												            Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+												        </div>
+												      </div>
+												    </li>
+
+												  </ul>
+												</div>
+
+												</div>
+
 
                         <div class="row divider">
                            <div class="col-sm-12"><hr></div>
@@ -70,23 +179,13 @@
 
 
 
-                        <div class="row divider">
-                           <div class="col-sm-12"><hr></div>
-                        </div>
-
-
-
-                        <hr>
-                        <hr>
-                        <p class="text-center">Extreme thanks and mad props to <a href="http://bost.ocks.org/mike/">Mike Bostock</a> of <a href="http://d3js.org/">D3</a> for the visualization tools.
-                            </p>
                         <hr>
                         <hr>
                         <div class="row" id="footer">
 
                           <div class="col-sm-12">
                             <p class="text-right">
-                            Content under Creative Commons <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>BY-NC-SA. </a>Powered by  <a href='https://developers.google.com/appengine/'>GAE.</a> Bootstrap layout adapted from <a href="http://bootply.com/" target="ext">Bootply.</a> <br>Uses <a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a> and <a href="https://github.com/noizwaves/bootstrap-social-buttons">bootstrap-social-buttons</a>. For best results, try <a href="https://www.mozilla.org/en-US/firefox/new/" target="ext">Firefox.</a>
+                            Content under Creative Commons <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>BY-NC-SA. </a>Powered by  <a href='https://developers.google.com/appengine/'>GAE</a>/ Uses <a href="http://d3js.org/">D3</a>. Bootstrap layout adapted from <a href="http://bootply.com/" target="ext">Bootply.</a> <br>Uses <a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a> and <a href="https://github.com/noizwaves/bootstrap-social-buttons">bootstrap-social-buttons</a>. For best results, try <a href="https://www.mozilla.org/en-US/firefox/new/" target="ext">Firefox.</a>
                             </p>
                           </div>
                         </div>
@@ -118,159 +217,21 @@ function showInterestDiv() {
    }
 }
 
-
-</script>
-
-<script>
-
-var w = $("#forcegraph").innerWidth(),
-    h = 600;
-var r = 30*w/800;
-
-var clicked = ["me","education","biology", "computing"];
-
-var force = d3.layout.force()
-    .charge(function(d){ return clicked.indexOf(d.src)>-1 ? -3000*r/30 : 0;})
-    .linkStrength(0.2)
-    .linkDistance(function(d) {return 50*r/30;})
-    .size([w, h]);
-
-var vis = d3.select("#forcegraph").append("svg:svg")
-    .attr("width", w)
-    .attr("height", h);
-
-d3.csv("js/graph.csv", function(links) {
-  var nodesByName = {};
-
-  // Create nodes for each unique source and target.
-  links.forEach(function(link) {
-    link.target = nodeByNamePlus(link.target,link.im,link.size,link.source,link.desc);
-    link.source = nodeByName(link.source);
-  });
-
-  // Extract the array of nodes from the map by name.
-  var nodes = d3.values(nodesByName);
-
-  // Create the link lines.
-  var link = vis.selectAll(".link")
-      .data(links)
-    .enter().append("line")
-      .attr("class", "link");
-
-  // Create the node circles.
-  var node = vis.selectAll(".node")
-      .data(nodes)
-    .enter().append("g")
-      .attr("class", "node")
-      .on("click",click)
-      .call(force.drag);
-
-  var clip = vis.append("defs").append("svg:clipPath")
-        .attr("id", "clip")
-        .append("svg:circle")
-        .attr("id", "clip-rect")
-        .attr("cx", 0)
-        .attr("cy", 0)
-        .attr("r", r)
-        .attr("stroke","black");
-
-  node.append("image")
-    .attr("xlink:href", function(d) { return d.im ? d.im : "";})
-    .attr("x",-r)
-    .attr("y",-r)
-    .attr("width", 2*r)
-    .attr("height", 2*r)
-    .attr("clip-path","url(#clip)")
-    .attr("title",function(d) {return d.desc ? d.desc  : "";});
-
-  node.append("text")
-      .attr("dx", function(d) { return -d.name.length*3.5; })
-      .attr("dy", r+10)
-      .text(function(d) { return d.name });
-
-  /*
-  node.append("rect")
-    .attr("class","node-rect")
-    .style("opacity",function(d) { if(d.src=="me" && d.name!="me") {return 0.5;} else{return 0;}  })
-    .attr("x", -r)
-     .attr("y", -r)
-      .attr("width", 2*r)
-      .attr("height", 2*r);
-      */
-
-  // Start the force layout.
-  force
-      .nodes(nodes)
-      .links(links)
-      .on("tick", tick)
-      .start();
-
-  function tick() {
-
-    node.style("opacity",function(d) {
-        d.trans = 0;
-        if(clicked.indexOf(d.src)>-1) d.trans = 1;
-        return d.trans;
-      });
-
-
-    node.attr("transform", function(d) {
-        d.x = Math.max(r, Math.min(w - 2*r, d.x));
-        d.y = Math.max(h/2, Math.min(h - 2*r, d.y));
-        if(d.src=="me") {
-            d.y = h/4;
-            d.x = Math.max(w/6, Math.min(5*w/6, d.x));
+$('form').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+        url:'symptoms',
+        type:'post',
+        data:$('form').serialize(),
+        success:function(data){
+					console.log(data["todisplay"])
         }
-        if(d.name=="me") d.y = h/8;
-        return "translate(" + d.x + "," + d.y + ")";
-      });
-
-    link.style("opacity",function(d) { return Math.min(d.target.trans,d.source.trans);  });
-    link.attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
-
-  }
-
-  function click(d) {
-  if (!d3.event.defaultPrevented) {
-    var ind = clicked.indexOf(d.name);
-    if(ind>0){
-        clicked.splice(ind, 1)
-    } else {
-        clicked.push(d.name);
-    }
-    force.start();
-    }
-  }
-
-  function nodeByName(name) {
-    return nodesByName[name] || (nodesByName[name] = {name: name});
-  }
-
-  function nodeByNamePlus(name,im,size,src,desc) {
-    return nodesByName[name] || (nodesByName[name] = {name: name, im: im, size: size, src: src, desc: desc});
-  }
+    });
 });
-
-$( window ).resize(function() {
-    w = $("#forcegraph").innerWidth();
-    force.size([w, h ]);
-    vis.attr("width", w);
-});
-
-
-
 
 </script>
 
-    <script src='js/bubble.js'></script>
-    <script src='js/lib_data.js'></script>
-    <script src='js/lib_link.js'></script>
-    <script src='js/lib_mouse.js'></script>
-    <script src='js/lib_plot.js'></script>
-    <script src='js/main.js'></script>
+<script src="js/force_graph.js"></script>
 
 	</body>
 </html>

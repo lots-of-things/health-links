@@ -1,22 +1,59 @@
-source,target,im,desc
-me,me,im/face_goof.jpg,Will McFadden: me
-me,computing,http://www.researchtrends.com/wp-content/uploads/2012/09/Network-314x235.jpg,101001100 
-computing,supercomputing,http://cdn9.whealmedia.com/wp-content/uploads/datacenter.jpg?3b00b5,I write java/python/matlab programs for launch on supercomputers
-computing,simulations,https://pbs.twimg.com/profile_images/378800000220648271/14174370270decbb931268fb6f92bfd5_400x400.jpeg,I like to convert abstract ideas into quantitative models
-computing,web design,http://restaurantengine.com/wp-content/uploads/2012/10/free-web-traffic.jpg,I build websites to communicate
-computing,data science,https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTETHdQv0P1yn6dJsBhcbd4GrJnuGIowh2GacLQmOzUoHadFgDP,buzzzzz
-me,biology,http://web.mit.edu/mbuehler/www/20100312125010-3.jpg,My PhD is on modeling active biomaterials
-biology,biomedical research,https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ1U0XPqLbKTbzvtPxFPyHICQf-LB3n1uTHYaJ77JF-0RPZuSYL,saving lives 20-100 years from now
-biology,biotechnology,http://www.reading.ac.uk/web/MultimediaFiles/maths-entangledpolymers.jpg,I'm interested in creating materials that self-organize to do useful, novel things
-me,education,http://www.fresnostate.edu/kremen/teachmathscience/images/apple2.jpg,educating the public and the next generation of scientists
-education,online courses,https://avatars3.githubusercontent.com/u/7784380?v=2&s=72,synthetic biology and biological modeling
-education,youth outreach,https://lh6.googleusercontent.com/-10biVUNUFNM/VBOA9lciEdI/AAAAAAAAAkI/iW5yqzn8QEQ/s150-no/artifice.tif,I help run the @rtifice tech center on the southside of Chicago
-biotechnology,simulations
-web design,youth outreach
-supercomputing,simulations
-data science,biomedical research
-web design,online courses
-online courses,simulations
-web design,online courses
-biotechnology,online courses
-web design,youth outreach
+source,target,strength
+eczema,contact dermatitis,0.209539519031
+eczema,atopic dermatitis,0.271537693321
+eczema,psoriasis,0.270765180537
+eczema,dry skin,0.271537693321
+eczema,xerosis,0.207390338946
+angiomas,hemangiomas,0.866025403784
+hemangiomas,tinea,0.218217890236
+warts,molluscum contagiosum,0.258198889747
+intertrigo,dry skin,0.218217890236
+intertrigo,xerosis,0.333333333333
+urticaria,hives,0.38490017946
+urticaria,impetigo,0.204124145232
+atopic dermatitis,dermatitis herpetiformis,0.377964473009
+dermatitis herpetiformis,psoriasis,0.301511344578
+herpes,herpes zoster,0.370479286817
+herpes,syphilis,0.469668218314
+psoriasis,dry skin,0.227921152919
+psoriasis,vitiligo,0.213200716356
+psoriasis,stasis dermatitis,0.301511344578
+psoriasis,lichen planus,0.269679944985
+psoriasis,schamberg's disease,0.301511344578
+dry skin,xerosis,0.436435780472
+folliculitis,sebaceous cyst,0.656041532496
+herpes zoster,shingles,0.377964473009
+herpes zoster,varicella,0.377964473009
+herpes zoster,impetigo,0.267261241912
+herpes zoster,chicken pox,0.534522483825
+shingles,varicella,1.0
+hair loss,seborrheic dermatitis,0.353553390593
+hair loss,tinea,0.377964473009
+seborrheic dermatitis,tinea,0.267261241912
+tinea,schamberg's disease,0.377964473009
+tinea,terbinafine,0.377964473009
+fordyce spots,molluscum contagiosum,0.239045721867
+acne,dandruff,0.324442842262
+acne,hirsutism,0.229415733871
+atypical moles,moles,0.57735026919
+keratosis pilaris,tretinoin,0.408248290464
+hyperpigmentation,chemical peels,0.377964473009
+hyperpigmentation,lasers,0.377964473009
+pityriasis alba,vitiligo,0.707106781187
+vitiligo,lichen planus,0.316227766017
+tretinoin,allergic contact dermatitis,0.57735026919
+tretinoin,botox,0.408248290464
+tretinoin,hydroquinone,0.816496580928
+lichen planus,schamberg's disease,0.4472135955
+lichen planus,lichen sclerosus,0.258198889747
+chemical peels,lasers,1.0
+allergic contact dermatitis,botox,0.707106781187
+allergic contact dermatitis,hydroquinone,0.707106781187
+botox,hydroquinone,0.5
+syphilis,chancroid,0.22360679775
+syphilis,granuloma inguinale,0.22360679775
+balanitis,granuloma annulare,0.301511344578
+aphthous ulcer,tetracycline,1.0
+granuloma annulare,lichen sclerosus,0.57735026919
+lichen sclerosus,lichen simplex chronicus,0.57735026919
+chancroid,granuloma inguinale,1.0

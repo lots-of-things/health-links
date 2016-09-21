@@ -1,4 +1,4 @@
-application: healthconnect
+application: link-to-health
 version: 1
 runtime: python27
 api_version: 1
@@ -15,5 +15,9 @@ handlers:
 - url: /css
   static_dir: css
 
-- url: /
-  static_dir: html
+- url: /.*
+  script: script.app
+
+libraries:
+- name: webapp2
+  version: latest
