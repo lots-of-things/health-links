@@ -1,4 +1,5 @@
-import webapp2, urllib, json
+import webapp2, urllib, json, pickle
+#import pandas as pd
 from google.appengine.ext import ndb
 
 DEFAULT_SYMPTOMSLOG_NAME = 'forum_data'
@@ -16,6 +17,13 @@ class SymptomDescription(ndb.Model):
     content = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
 
+
+
+def findDiagnosis(text):
+    tfidf=vectorizer.transform([text])
+    diag=clf.predict_proba(tfidf)
+    return 'some text'
+
 class QuerySymptoms(webapp2.RequestHandler):
 
     def get(self):
@@ -32,10 +40,13 @@ class QuerySymptoms(webapp2.RequestHandler):
 
         symptom.content = self.request.get('content')
         symptom.put()
-
-        obj = {'todisplay': self.request.get('content')}
+        diag=findDiagnosis(symptom.content)
+        obj = {'todisplay': [{'link':'http://www.purple.com', 'question':'I have some symptoms that involve some bumps and some red rashes.'},{'link':'http://www.makeloft.org', 'question':'I have some pink spots on my left arm.'}]}
         self.response.headers['Content-Type'] = 'application/json'
         self.response.write(json.dumps(obj))
+
+vectorizer = pickle.load(open("forum_vectorizer.pkl", "rb" ) )
+clf=pickle.load(open("forum_classifier.pkl", "rb" ) )
 
 app = webapp2.WSGIApplication([
     ('/symptoms', QuerySymptoms)

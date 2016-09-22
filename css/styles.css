@@ -272,7 +272,7 @@ overflow:scroll;
   content: " ";
   width: 3px;
   background-color: #eeeeee;
-  left: 50%;
+  left: 10%;
   margin-left: -1.5px;
 }
 
@@ -302,7 +302,7 @@ overflow:scroll;
 }
 
 .timeline > li > .timeline-panel {
-  width: 46%;
+  width: 88%;
   float: left;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
