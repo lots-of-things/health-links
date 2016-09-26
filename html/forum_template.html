@@ -1,0 +1,13 @@
+
+
+					<ul class="timeline" >
+						{% for item in items %}
+ 						<li class="timeline-inverted">
+ 								<div class="timeline-panel">
+ 									<div class="timeline-body">
+ 										<a href="{{ item['post'] }}">{{ item['response'] }}</a>
+ 									</div>
+ 								</div>
+ 						</li>
+						{% endfor %}
+ 					</ul>

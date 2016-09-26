@@ -23,7 +23,7 @@
 
 							<ul class="nav text-center">
 									<li>
-										<h3>Health Info Connect</h3>
+										<h3>HealthSExperience</h3>
 										<!--<a href="http://www.makeloft.org/" target="_blank" >by MakeLofT</a>-->
 									</li>
 									<li>
@@ -50,7 +50,7 @@
 					<!-- /sidebar -->
 
             <!-- main -->
-            <div class="column col-sm-9" id="main">
+            <div class="column col-sm-9" id="main" style="display:none">
                 <div class="padding">
                     <div class="full col-sm-9">
 
@@ -78,18 +78,23 @@
 
 
 
-												<div class="row" id="forcegraphcontainer" >
+												<div class="row" id="conditiongraphcontainer" >
 													<div class="col-sm-8">
-														<h4>Closely Related Conditions</h4>
+														<h4>Related Topics</h4>
                           </div>
                           <div class="col-sm-4">
                             <small id="interestDiv" class="text-muted2"  >
-																Enter your information to find out what other people have written regarding this condition.
+																Graph connectivity shows related conditions
                             </small>
-                            <small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Read More</a></small>
+                            <small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Select a topic to see more...</a></small>
                             </h4>
                           </div>
-                          
+													<div  class="col-sm-8" id="conditiongraph" ></div>
+													<div class="col-sm-4" id="conditiontext">
+														<div class="row" id="just_abit" >
+															<p>Here is a sentence for locational information</p>
+														</div>
+													</div>
                         </div>
 
                         <div class="row divider">
@@ -118,27 +123,59 @@
 
 
 
-												<div class="row" id="forumlistcontainer" >
+
+
+
+												<div class="row" id="statlistcontainer" >
 													<div class="col-sm-8">
-														<h4>Similar Experiences</h4>
+														<h4>Disease Statistics</h4>
 													</div>
 													<div class="col-sm-4">
 														<small id="relatedCond" class="text-muted2"  >
-																Click a post to jump to that page.
+																Find out how likely this condition is and how likely you are to read about it online.
 														</small>
-														<small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Read More</a></small>
+														<small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Learn More...</a></small>
 														</h4>
 													</div>
 
 													<div class="col-sm-12">
 
-												  <ul class="timeline" id="simexp">
 
+													</div>
 
-
-
-												  </ul>
 												</div>
+
+
+
+												<div class="row divider">
+													 <div class="col-sm-12"><hr></div>
+												</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+												<div class="row" id="forumlistcontainer" >
+													<div class="col-sm-8">
+														<h4>Sexual Health Experiences</h4>
+													</div>
+													<div class="col-sm-4">
+														<small id="relatedCond" class="text-muted2"  >
+														These posts are the most relevant and are relevant to the condition selected above.
+														</small>
+														<small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Click a post to jump to that page...</a></small>
+														</h4>
+													</div>
+
+													<div class="col-sm-8" id="simexp"></div>
 
 												</div>
 
@@ -176,6 +213,7 @@
 
 		<script src="js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+				<script src="js/conditions.js"></script>
 
 <script>
 function showInterestDiv() {
@@ -189,30 +227,25 @@ function showInterestDiv() {
 }
 
 $('form').submit(function(e){
+	$("#main").css('display','block')
     e.preventDefault();
-    $.ajax({
+		console.log($('form').serialize())
+		$.ajax({
         url:'symptoms',
         type:'post',
         data:$('form').serialize(),
         success:function(data){
-					tod=data["todisplay"];
-					$("#simexp").empty();
-					for (t in tod){
-						$("#simexp").append('<li class="timeline-inverted">\
-								<div class="timeline-panel">\
-									<div class="timeline-body">\
-										<a href="'+tod[t]['link']+'">'+tod[t]['question']+'</a>\
-									</div>\
-								</div>\
-						</li>');
-					}
-        }
+					cond=data['conditions']
+					conditions_appear(cond.join(";"))
+					select_condition(cond[0])
+					$("#simexp").html(data);
+
+				}
     });
 });
 
 </script>
 
-<script src="js/force_graph.js"></script>
 
 	</body>
 </html>

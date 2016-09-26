@@ -1,9 +1,9 @@
 /* move special fonts to HTML head for better performance */
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700');
 
-#forcegraph {
+#conditiongraph {
     border:1px solid #EEE;
-    border-radius: 100px 100px 5px 5px;
+    border-radius: 10px 10px 10px 10px;
     background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 47%, rgba(227,235,252,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,1)), color-stop(100%,rgba(227,235,252,1))); /* Chrome,Safari4+ */
@@ -199,64 +199,6 @@ small.text-muted2 {
     padding:5px;
 }
 
-#skillbubbles text {
-  /*font-size: 11px;*/
-  pointer-events: none;
-}
-
-#skillbubbles text.parent {
-  fill: #1f77b4;
-}
-
-#skillbubbles circle {
-  fill: #ccc;
-  stroke: #999;
-  pointer-events: all;
-}
-
-#skillbubbles circle.parent {
-  fill: #1f77b4;
-  fill-opacity: .1;
-  stroke: steelblue;
-}
-
-#skillbubbles circle.parent:hover {
-  stroke: #ff7f0e;
-  stroke-width: .5px;
-}
-
-#skillbubbles circle.child {
-  pointer-events: none;
-}
-
-#chart {
-overflow:scroll;
-}
-
-#chart .node rect {
-  cursor: move;
-  fill-opacity: .9;
-  shape-rendering: crispEdges;
-}
-
-#chart .node text {
-  pointer-events: none;
-  text-shadow: 0 1px 0 #fff;
-}
-
-#chart .link {
-  fill: none;
-  stroke: #000;
-  stroke-opacity: .2;
-}
-
-#chart .link:hover {
-  stroke-opacity: .5;
-}
-
-#chart text{
-  font-family:Courier;
-}
 
 
 .timeline {
