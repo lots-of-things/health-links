@@ -128,7 +128,7 @@
 
 												<div class="row" id="statlistcontainer" >
 													<div class="col-sm-8">
-														<h4>Disease Statistics</h4>
+														<h4 id="stattitle">Disease Statistics</h4>
 													</div>
 													<div class="col-sm-4">
 														<small id="relatedCond" class="text-muted2"  >
@@ -138,7 +138,7 @@
 														</h4>
 													</div>
 
-													<div class="col-sm-12">
+													<div class="col-sm-12" id="statspot">
 
 
 													</div>
@@ -175,7 +175,7 @@
 														</h4>
 													</div>
 
-													<div class="col-sm-8" id="simexp"></div>
+													<div class="col-sm-12" id="simexp"></div>
 
 												</div>
 
@@ -229,7 +229,6 @@ function showInterestDiv() {
 $('form').submit(function(e){
 	$("#main").css('display','block')
     e.preventDefault();
-		console.log($('form').serialize())
 		$.ajax({
         url:'symptoms',
         type:'post',

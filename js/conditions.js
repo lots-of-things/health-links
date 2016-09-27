@@ -133,6 +133,16 @@ function conditions_appear(conditions){
   function select_condition(cond){
 
     $.ajax({
+        url:'statistics',
+        type:'post',
+        //data:$('form').serialize()+'&condition='+cond,
+        data:'condition='+cond,
+        success:function(data){
+          $("#stattitle").html(cond+" facts");
+          $("#statspot").html(data);
+        }
+    });
+    $.ajax({
         url:'experiences',
         type:'post',
         //data:$('form').serialize()+'&condition='+cond,

@@ -38,6 +38,23 @@ class GetConditions(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write(json.dumps(json.loads(resp.read())))
 
+class GetStatistics(webapp2.RequestHandler):
+
+    def get(self):
+        pass
+
+    def post(self):
+        # SYMPTOMSLOG_name = DEFAULT_SYMPTOMSLOG_NAME
+        # symptom = SymptomDescription(parent=SYMPTOMSLOG_key(SYMPTOMSLOG_name))
+        #
+        condition = self.request.get('condition')
+        # symptom.put()
+        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/statistics/"+condition)
+        d = json.loads(resp.read())
+
+
+        template = JINJA_ENVIRONMENT.get_template('html/condition_cards.html')
+        self.response.write(template.render(d))
 
 class GetExperiences(webapp2.RequestHandler):
 
@@ -64,5 +81,6 @@ class GetExperiences(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/experiences', GetExperiences),
+    ('/statistics', GetStatistics),
     ('/symptoms', GetConditions)
 ], debug=True)

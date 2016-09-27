@@ -348,3 +348,7 @@ small.text-muted2 {
 .timeline-body > p + p {
   margin-top: 5px;
 }
+
+.thumbnail {
+	padding:0;
+}
