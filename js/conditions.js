@@ -17,7 +17,7 @@ function conditions_appear(conditions){
         .attr("width", w)
         .attr("height", h);
 
-    d3.csv("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+conditions, function(links) {
+    d3.csv('/similarity?'+$.param({condition:conditions}), function(links) {
       var nodesByName = {};
 
       // Create nodes for each unique source and target.

@@ -23,6 +23,18 @@ class SymptomDescription(ndb.Model):
     content = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
 
+class GetSimilarity(webapp2.RequestHandler):
+
+    def get(self):
+        # SYMPTOMSLOG_name = DEFAULT_SYMPTOMSLOG_NAME
+        # symptom = SymptomDescription(parent=SYMPTOMSLOG_key(SYMPTOMSLOG_name))
+        #
+        condition = self.request.get('condition')
+        # symptom.put()
+        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition)
+        #self.response.out.write("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition)
+        self.response.out.write(resp.read())
+
 class GetConditions(webapp2.RequestHandler):
 
     def get(self):
@@ -80,6 +92,7 @@ class GetExperiences(webapp2.RequestHandler):
         #self.response.write(d)
 
 app = webapp2.WSGIApplication([
+    ('/similarity', GetSimilarity),
     ('/experiences', GetExperiences),
     ('/statistics', GetStatistics),
     ('/symptoms', GetConditions)
