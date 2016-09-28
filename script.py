@@ -30,9 +30,10 @@ class GetSimilarity(webapp2.RequestHandler):
         # symptom = SymptomDescription(parent=SYMPTOMSLOG_key(SYMPTOMSLOG_name))
         #
         condition = self.request.get('condition')
+        probs = self.request.get('probs')
         # symptom.put()
-        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition)
-        #self.response.out.write("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition)
+        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition+"?probs="+probs)
+        #self.response.out.write("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition+"?probs="+probs)
         self.response.out.write(resp.read())
 
 class GetConditions(webapp2.RequestHandler):
@@ -47,8 +48,12 @@ class GetConditions(webapp2.RequestHandler):
         content = self.request.get('content')
         # symptom.put()
         resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/conditions/"+content)
+        obj = json.loads(resp.read())
+
+        template = JINJA_ENVIRONMENT.get_template('html/condition_list.html')
+        obj['conditionlist']=template.render(obj)
         self.response.headers['Content-Type'] = 'application/json'
-        self.response.out.write(json.dumps(json.loads(resp.read())))
+        self.response.out.write(json.dumps(obj))
 
 class GetStatistics(webapp2.RequestHandler):
 

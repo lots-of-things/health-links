@@ -2,6 +2,7 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700');
 
 #conditiongraph {
+  padding:0;
     border:1px solid #EEE;
     border-radius: 10px 10px 10px 10px;
     background: rgb(255,255,255); /* Old browsers */
@@ -73,7 +74,8 @@ a {
     position: absolute;
     right: 0;
     top: 0;
-    background-image:url('http://neverfearfailure.com/wp-content/uploads/2016/03/5-Questions-to-Ask-Yourself-When-Building-a-Health-Plan-678x381.jpg');
+    /*background-image:url('http://neverfearfailure.com/wp-content/uploads/2016/03/5-Questions-to-Ask-Yourself-When-Building-a-Health-Plan-678x381.jpg');*/
+    background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/YoungCoupleEmbracing-20070508.jpg/1024px-YoungCoupleEmbracing-20070508.jpg');
     background-size:cover;
     background-attachment:fixed;
 }
@@ -351,4 +353,16 @@ small.text-muted2 {
 
 .thumbnail {
 	padding:0;
+}
+
+#statspot{
+  margin:0 0 0 -5%;
+}
+
+.list-group-item{
+cursor: pointer;
+}
+
+#statlistcontainer{
+  padding:1% 0 0 0;
 }

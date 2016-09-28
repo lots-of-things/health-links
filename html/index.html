@@ -11,8 +11,9 @@
         <link href="css/social-buttons.css" rel="stylesheet">
 
 		<link href="css/styles.css" rel="stylesheet">
-	    <link href="css/demo.css" rel="stylesheet">
-	</head>
+		<link href="css/demo.css" rel="stylesheet">
+		<link href="css/ripple.css" rel="stylesheet">
+</head>
 	<body>
 <div class="wrapper">
     <div class="box">
@@ -23,11 +24,11 @@
 
 							<ul class="nav text-center">
 									<li>
-										<h3>HealthSExperience</h3>
+										<h3>Healthy SEXperiences</h3>
 										<!--<a href="http://www.makeloft.org/" target="_blank" >by MakeLofT</a>-->
 									</li>
 									<li>
-									<p><i>Enter your symptoms and we'll connect you with more information and suggest what to bring up with your doctor.</i></p>
+									<p><i>Find all the relevant conversations about your sexual health concerns </i></p>
 									</li>
 
 									<div class="row">
@@ -35,7 +36,7 @@
 											<form method="post">
 												<div class="form-group">
 													<label for="exampleTextarea">Symptoms</label>
-													<textarea class="form-control" id="exampleTextarea" rows="5" placeholder="Enter your symptoms as you would describe them to a doctor" name="content"></textarea>
+													<textarea class="form-control" id="exampleTextarea" rows="5" placeholder="Describe your symptoms or concerns and we'll help you find out more." name="content"></textarea>
 												</div>
 												<button type="submit" class="btn btn-primary pull-right" style="background:#E2A675;color:white">Search</button>
 											</form>
@@ -75,12 +76,9 @@
 
 
 
-
-
-
 												<div class="row" id="conditiongraphcontainer" >
 													<div class="col-sm-8">
-														<h4>Related Topics</h4>
+														<h3>sexual health map</h3>
                           </div>
                           <div class="col-sm-4">
                             <small id="interestDiv" class="text-muted2"  >
@@ -89,17 +87,17 @@
                             <small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Select a topic to see more...</a></small>
                             </h4>
                           </div>
-													<div  class="col-sm-8" id="conditiongraph" ></div>
-													<div class="col-sm-4" id="conditiontext">
-														<div class="row" id="just_abit" >
-															<p>Here is a sentence for locational information</p>
+													<div  class="col-sm-8" id="conditiongraph" >
+														<div class='uil-ripple-css' style='transform:scale(1);' id="ripple"><div></div><div></div></div>
+													</div>
+													<div class="col-sm-4 pre-scrollable" id="conditionlistcontainer">
+														<div class="row" id="conditionlist" >
+
 														</div>
 													</div>
                         </div>
 
-                        <div class="row divider">
-                           <div class="col-sm-12"><hr></div>
-                        </div>
+
 
 
 
@@ -127,16 +125,17 @@
 
 
 												<div class="row" id="statlistcontainer" >
-													<div class="col-sm-8">
-														<h4 id="stattitle">Disease Statistics</h4>
-													</div>
-													<div class="col-sm-4">
+													<!-- <div style="text-align:center">
+														<h3 id="stattitle" ></h3>
+														<hr>
+													</div> -->
+													<!--<div class="col-sm-4">
 														<small id="relatedCond" class="text-muted2"  >
 																Find out how likely this condition is and how likely you are to read about it online.
 														</small>
-														<small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Learn More...</a></small>
+														<!<small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Learn More...</a></small>
 														</h4>
-													</div>
+													</div>-->
 
 													<div class="col-sm-12" id="statspot">
 
@@ -147,9 +146,9 @@
 
 
 
-												<div class="row divider">
+												<!--<div class="row divider">
 													 <div class="col-sm-12"><hr></div>
-												</div>
+												</div>-->
 
 
 
@@ -164,18 +163,18 @@
 
 
 												<div class="row" id="forumlistcontainer" >
-													<div class="col-sm-8">
-														<h4>Sexual Health Experiences</h4>
-													</div>
-													<div class="col-sm-4">
+													<!-- <div class="col-sm-8">
+														<h3>other experiences</h3>
+													</div> -->
+													<!--<div class="col-sm-4">
 														<small id="relatedCond" class="text-muted2"  >
 														These posts are the most relevant and are relevant to the condition selected above.
 														</small>
 														<small class="text-muted"><a id="interestBut" class="text-muted" onclick="showInterestDiv()">Click a post to jump to that page...</a></small>
 														</h4>
-													</div>
+													</div>-->
 
-													<div class="col-sm-12" id="simexp"></div>
+													<div class="col-sm-12" id="simexp"><div class='uil-ripple-css' style='transform:scale(1);' id="ripple"><div></div><div></div></div></div>
 
 												</div>
 
@@ -225,23 +224,6 @@ function showInterestDiv() {
         document.getElementById('interestBut').text = "Hide";
    }
 }
-
-$('form').submit(function(e){
-	$("#main").css('display','block')
-    e.preventDefault();
-		$.ajax({
-        url:'symptoms',
-        type:'post',
-        data:$('form').serialize(),
-        success:function(data){
-					cond=data['conditions']
-					conditions_appear(cond.join(";"))
-					select_condition(cond[0])
-					$("#simexp").html(data);
-
-				}
-    });
-});
 
 </script>
 

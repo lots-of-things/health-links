@@ -1,0 +1,7 @@
+
+	<ul class="list-group">
+{% for condition in conditions %}
+<li class="list-group-item" id ="list_{{ '_'.join(condition.split(' ')) }}">{{ condition }}</li>
+<!--<span class="tag tag-default tag-pill pull-xs-right">14</span>-->
+{% endfor %}
+</ul>
