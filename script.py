@@ -23,6 +23,11 @@ class SymptomDescription(ndb.Model):
     content = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
 
+class MarkIrrelevant(webapp2.RequestHandler):
+
+    def get(self):
+        pass
+
 class GetSimilarity(webapp2.RequestHandler):
 
     def get(self):
@@ -68,7 +73,7 @@ class GetStatistics(webapp2.RequestHandler):
         # symptom.put()
         resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/statistics/"+condition)
         d = json.loads(resp.read())
-
+        d['condition']=condition
 
         template = JINJA_ENVIRONMENT.get_template('html/condition_cards.html')
         self.response.write(template.render(d))
@@ -89,6 +94,7 @@ class GetExperiences(webapp2.RequestHandler):
         resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/experiences/"+content+"?condition="+condition)
         d = json.loads(resp.read())
         template_values = {
+            'condition': condition,
             'items': d['sim_exp']
         }
 
@@ -100,5 +106,6 @@ app = webapp2.WSGIApplication([
     ('/similarity', GetSimilarity),
     ('/experiences', GetExperiences),
     ('/statistics', GetStatistics),
+    ('/irrelevant', MarkIrrelevant),
     ('/symptoms', GetConditions)
 ], debug=True)

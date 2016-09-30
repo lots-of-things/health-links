@@ -1,11 +1,12 @@
 
-
+<div class="thumbnail" style="margin-left:-1.5px;border-color:#eeeeee;border-right:none;border-bottom:none;padding-bottom:0;margin-bottom:0;padding-left:10px;border-width:3px;"><h4>Similar {{ condition }} experiences</h4></div>
 					<ul class="timeline" >
-						{% for item in items %}
+						{% for item in items[:10] %}
  						<li class="timeline-inverted">
  								<div class="timeline-panel">
  									<div class="timeline-body">
  										<a href="{{ item['post'] }}">{{ item['response'] }}</a>
+										<a class='pull-right' style="color:#ccc" href="irrelevant?response={{item['reponse']}}">(Mark this post as irrelevant).</a>
  									</div>
  								</div>
  						</li>

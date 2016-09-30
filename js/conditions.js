@@ -18,7 +18,6 @@ function conditions_appear(conditions,probs){
     .range(["#003366", "#FF6600"]);
 
     force = d3.layout.force()
-        .gravity(0)
         .charge(function(d){ return  -150*r ;})
         .linkStrength(6)
         .linkDistance(function(d) {return 80;})
