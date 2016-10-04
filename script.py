@@ -37,8 +37,7 @@ class GetSimilarity(webapp2.RequestHandler):
         condition = self.request.get('condition')
         probs = self.request.get('probs')
         # symptom.put()
-        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition+"?probs="+probs)
-        #self.response.out.write("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition+"?probs="+probs)
+        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition+"/"+probs)
         self.response.out.write(resp.read())
 
 class GetConditions(webapp2.RequestHandler):
@@ -91,7 +90,7 @@ class GetExperiences(webapp2.RequestHandler):
         # symptom.put()
         content = self.request.get('content')
         condition = self.request.get('condition')
-        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/experiences/"+content+"?condition="+condition)
+        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/experiences/"+content+"/"+condition)
         d = json.loads(resp.read())
         template_values = {
             'condition': condition,
