@@ -13,6 +13,10 @@ handlers:
   static_files: html/analysis.html
   upload: html/analysis.html
 
+- url: /present
+  static_files: html/present.html
+  upload: html/present.html
+
 - url: /js
   static_dir: js
 

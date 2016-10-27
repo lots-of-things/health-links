@@ -38,6 +38,7 @@ class GetSimilarity(webapp2.RequestHandler):
         probs = self.request.get('probs')
         # symptom.put()
         resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition+"/"+probs)
+        #self.response.out.write("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/similarity/"+condition+"?probs="+probs)
         self.response.out.write(resp.read())
 
 class GetConditions(webapp2.RequestHandler):
@@ -73,7 +74,7 @@ class GetStatistics(webapp2.RequestHandler):
         resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/statistics/"+condition)
         d = json.loads(resp.read())
         d['condition']=condition
-
+        # self.response.write(d)
         template = JINJA_ENVIRONMENT.get_template('html/condition_cards.html')
         self.response.write(template.render(d))
 
@@ -90,7 +91,10 @@ class GetExperiences(webapp2.RequestHandler):
         # symptom.put()
         content = self.request.get('content')
         condition = self.request.get('condition')
-        resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/experiences/"+content+"/"+condition)
+        if(condition):
+            resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/experiences/"+content+"/"+condition)
+        else:
+            resp = urllib.urlopen("http://ec2-54-208-15-210.compute-1.amazonaws.com/linkhealth/api/v1.0/experiences/"+content)
         d = json.loads(resp.read())
         template_values = {
             'condition': condition,
@@ -99,7 +103,7 @@ class GetExperiences(webapp2.RequestHandler):
 
         template = JINJA_ENVIRONMENT.get_template('html/forum_template.html')
         self.response.write(template.render(template_values))
-        #self.response.write(d)
+        # self.response.write(d)
 
 app = webapp2.WSGIApplication([
     ('/similarity', GetSimilarity),

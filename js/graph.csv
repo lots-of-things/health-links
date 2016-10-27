@@ -1,63 +1,133 @@
-source,target,strength
-hemangiomas,video,0.408248290464
-warts,genital warts,0.733799385705
-contact dermatitis,allergic contact dermatitis,0.438529009654
-herpes,genital herpes,0.462424564645
-dry skin,xerosis,0.408248290464
-folliculitis,sebaceous cyst,0.459763106198
-herpes zoster,zoster,1.0
-shingles,varicella,0.75
-shingles,chickenpox,0.5
-varicella,chicken pox,0.5
-seborrheic dermatitis,dandruff,0.67082039325
-seborrheic dermatitis,erythrasma,0.474341649025
-tinea,ringworm,0.4472135955
-staph,mrsa,0.51031036308
-cancer,cervical cancer,0.491303684441
-atypical moles,moles,0.707106781187
-keratosis pilaris,tretinoin,0.408248290464
-scleroderma,osteoarthritis,1.0
-scleroderma,rheumatoid arthritis,0.707106781187
-arthritis,rheumatoid arthritis,0.471404520791
-osteoarthritis,rheumatoid arthritis,0.707106781187
-rheumatoid arthritis,bronchitis,0.408248290464
-rheumatoid arthritis,vibration,0.707106781187
-pityriasis alba,vitiligo,0.57735026919
-tretinoin,botox,0.408248290464
-tretinoin,hydroquinone,0.816496580928
-lupus,tetracycline,0.4472135955
-lichen planus,schamberg's disease,0.408248290464
-chemical peels,lasers,1.0
-vaccines,vaccine safety,0.4472135955
-vaccines,hpv vaccination,0.4472135955
-vaccines,tetanus,0.4472135955
-botox,hydroquinone,0.5
-angular cheilitis,kaposis sarcoma,0.707106781187
-angular cheilitis,leukoplakia,0.5
-asthma,bronchitis,0.516397779494
-asthma,vibration,0.4472135955
-conjunctivitis,hand, foot and mouth disease,0.57735026919
-conjunctivitis,kawasaki disease,0.57735026919
-dandruff,erythrasma,0.53033008589
-chlamydia,gonorrhea,0.63709131009
-cmv,cryptosporidiosis,0.57735026919
-cmv,toxoplasmosis,0.57735026919
-bronchitis,vibration,0.57735026919
-chronic fatigue syndrome,cfs,0.5
-chronic fatigue syndrome,ebv infection,0.5
-ibd,video,0.408248290464
-aortic dissection,pulmonary embolism,1.0
-thrombosis,deep vein thrombosis,0.4472135955
-thrombosis,dvt,0.632455532034
-thrombosis,blood clot,0.4472135955
-granuloma annulare,lichen sclerosus,0.57735026919
-lichen sclerosus,lichen simplex chronicus,0.57735026919
-chancroid,granuloma inguinale,0.57735026919
-deep vein thrombosis,dvt,0.707106781187
-kaposis sarcoma,leukoplakia,0.707106781187
-lice,pubic lice,0.57735026919
-lice,body lice,0.57735026919
-vaccination,hpv vaccination,0.707106781187
-vaccination,tetanus,0.707106781187
-hpv vaccination,tetanus,1.0
-erythema nodosum,nummular eczema,1.0
+source,target,accuracy,words
+gerd,gerd,0.995542347697,eat;abdomin;bit;problem;ani;goe;wors;wa;left;sever
+acne,acne,0.986627043091,face;pimpl;skin;hair;effect;wors;pill;use;start;im
+aids,aids,0.973254086181,std;hiv;sex;ani;thi;bump;infect;day;week;peni
+adenomyosis,adenomyosis,0.988112927192,pain;pelvic;thi;period;sever;year;bad;feel;start;cramp
+cancer,cancer,0.979940564636,cancer;period;lump;hpv;breast;pap;left;doctor;famili;abnorm
+allergies,allergies,0.991084695394,ear;throat;nose;problem;cold;bad;rash;thi;look;medic
+hair loss,hair loss,0.996285289747,hair;loss;ani;hormon;month;ha;extrem;im pregnant;lose;prescrib
+amenorrhea,amenorrhea,0.979940564636,period;old;month;wa;havent;thi;period sinc;sinc;year;test
+gas,gas,0.980683506686,stomach;eat;pass;constip;feel;bloat;pain;abdomin;abdomin pain;like
+anemia,anemia,0.94279346211,bleed;heavi;blood;period;stop;month;im;day;week;pregnant
+anorgasmia,anorgasmia,0.993313521545,orgasm;feel;anyth;situat;masturb;wa;love;ani;thi;sex
+anxiety,anxiety,0.962109955423,erect;depress;masturb;period;ejacul;headach;wa;thi;day;feel
+appendicitis,appendicitis,0.996285289747,thi;right;abdomin pain;pain;sever;belli;ha;abdomin;time;abdomen
+arthritis,arthritis,0.993313521545,year;abl;test;time;common;hand;swollen;im;ani idea;suggest
+asthma,asthma,0.998514115899,someth;4;diseas;time;like;thing;test;abl;throat;problem
+back pain,back pain,0.956166419019,pain;lower;cramp;period;day;pregnant;neg;hpt;pregnanc;symptom
+bacterial vaginosis,bacterial vaginosis,0.990341753343,smell;odor;discharg;vagina;strong;coupl;thi;diagnos;itch;im
+vaginitis,vaginitis,0.979197622585,start;vagin;discharg;sex;effect;brown;start period;boyfriend;week;thi
+folliculitis,folliculitis,0.988855869242,bump;lump;shave;skin;small;labia;lip;hair;vagina;just
+cystitis,cystitis,0.988855869242,urin;bladder;uti;pain;pee;strong;thi;advic;right;come
+high blood pressure,high blood pressure,0.990341753343,pressur;erect;high;problem;healthi;blood;masturb;abl;caus;sex
+stroke,stroke,0.996285289747,sever;regular;thi;gone;new;birth control;just;headach;seriou;come
+breast cancer,breast cancer,0.991827637444,breast;cancer;effect;feel;hot;famili;left;sore;stay;recent
+breast pain,breast pain,0.994056463596,breast;effect;period;pain;abdomin;experienc;thing;day;feel;thi
+bronchitis,bronchitis,0.996285289747,throat;sever;irrit;someth;ani;best;say;clear;sore;ha
+burns,burns,0.990341753343,burn;vagina;sex;heal;help;big;pain;skin;shaft;doctor
+flu,flu,0.990341753343,fever;cold;throat;symptom;hiv;day;wa;bodi;sick;effect
+birth defects,birth defects,0.995542347697,safe;wa pregnant;medic;risk;pregnanc;babi;effect;know;took;remov
+bleeding disorders,bleeding disorders,0.994799405646,week;day;bleed;month;juli;3;doctor;blood;everi;regular
+blood clot,blood clot,0.983655274889,clot;blood;larg;bleed;period;thi;wa;minut;day;control
+family history,family history,0.990341753343,histori;famili;im scare;test;diagnos;arm;better;doesnt;remov;thi
+breastfeeding,breastfeeding,0.988855869242,month;stop;week;ago;symptom;pregnant;normal;daughter;babi;period
+candidiasis,candidiasis,0.997771173848,stuff;discharg;infect;white;pleas;itch;yeast;strang;irrit;thing
+thrush,thrush,0.988855869242,itchi;vagina;hurt;sex;cream;partner;feel;like;area;test
+chlamydia,chlamydia,0.988112927192,chlamydia;treat;test posit;period;std;discharg;ha;sexual;urin;wa test
+common cold,common cold,0.997771173848,cold;throat;increas;common;irrit;week;feel;exposur;contract;itch
+diabetes,diabetes,0.97176820208,erect;problem;leg;urin;ha;peni;abl;pee;dont;ejacul
+nutrition,nutrition,1.0,increas;fine;help;babi;white;ani;im just;regard;develop;pregnant
+ear infection,ear infection,0.996285289747,ear;infect;throat;antibiot;bigger;sound;right;wa;month;medic
+ebv infection,ebv infection,0.997028231798,hpv;red;wart;greatli;check;gone;area;6 month;told;possibl
+pid,pid,0.964338781575,pain;brown;thi;sex;period;normal;pelvic;dark;wa;someth
+pneumonia,pneumonia,0.997771173848,irrit;infect;ani;time;increas;chest;mother;right;constantli;week
+genital herpes,genital herpes,0.999257057949,genit herp;herp;genit;vagina;outbreak;hiv;infect;bump;sore;onli
+genital warts,genital warts,0.991827637444,wart;genit;hpv;bump;look;vagina;partner;wa;skin;doctor said
+gonorrhea,gonorrhea,0.989598811293,chlamydia;oral;bleed;brown;hiv;sexual;sex;test;oral sex;discharg
+zoster,zoster,0.999257057949,herp;blister;rash;onli;hi;itch;skin;ill;feel like;twice
+hypertension,hypertension,0.995542347697,problem;prevent;second;arm;ha;bed;erect;sex;dizzi;year
+infertility,infertility,0.941307578009,tri;conceiv;help;babi;pregnant;year;irregular;want;wa;period
+inflammatory bowel disease,inflammatory bowel disease,0.995542347697,pain;abdomen;feel;blood;stomach;wors;bad;whi;wake;condom
+molluscum contagiosum,molluscum contagiosum,0.999257057949,appear;area;pimpl;hi;shaft;wart;week;tell;final;inform
+mucus,mucus,0.929420505201,ovul;conceiv;tri;fertil;pregnant;day;period;ovari;irregular;thi
+outbreaks,outbreaks,0.997028231798,outbreak;herp;ha;infect;genit;old male;genit herp;thi;told;2 year
+pad,pad,0.98514115899,pad;wear;wipe;wa;bleed;heavi;clot;period;afterward;thi
+pcp,pcp,0.997028231798,new;left;abdomin;food;experienc;1;constip;ear;like;think
+pelvic inflammatory disease,pelvic inflammatory disease,0.980683506686,sex;pain;abdomen;hurt;smell;thi;month;partner;intercours;stomach
+pregnancy,pregnancy,0.937592867756,period;pregnant;day;pregnanc;im;week;wa;thi;sex;sinc
+psoriasis,psoriasis,0.996285289747,skin;ha;like;help;itchi;differ;famili;doesnt;suffer;hi
+runny nose,runny nose,0.997771173848,nose;increas;thank;thi morn;spread;irrit;past;concern;confus;advis
+salt,salt,0.993313521545,throat;water;swollen;sound;shower;minut;clear;ive;ear;make
+scabies,scabies,0.997771173848,itch;start;just;itchi;rash;dont ani;feel;touch;suffer;leg
+sexually transmitted diseases,sexually transmitted diseases,0.993313521545,peni;intercours;insid;like;caus;time;smell;stop;wa;week
+syphilis,syphilis,0.995542347697,hiv;oral sex;sex;doctor;std;femal;condom;oral;6;exposur
+trichomoniasis,trichomoniasis,0.991084695394,smell;odor;wa;discharg;itch;symptom;stuff;thi;come;itchi
+shingles,shingles,0.999257057949,got;1;week;ha;pain;fatigu;diagnos;wa;blister;spot
+sinus infection,sinus infection,0.991827637444,infect;headach;morn;ear;thi;antibiot;nose;finish;time;irrit
+sore throat,sore throat,0.993313521545,throat;sore;hiv;fever;cold;swollen;symptom;day;nose;oral
+staph,staph,0.994056463596,infect;bump;leg;pop;wont;vagina;year;away;lot;insid
+strep throat,strep throat,0.998514115899,fever;throat;pack;believ;pretti;away;began;wonder;twice;cultur
+tinea,tinea,0.998514115899,hi;condit;area;spot;ani;skin;chest;spread;daughter;odor
+video,video,0.999257057949,sperm;erect;long time;food;treatment;peni;doctor;ejacul;strang;im sure
+vitamins,vitamins,0.990341753343,wa;lip;know;help;ani;howev;gone;conceiv;recommend;day
+yeast infection,yeast infection,0.992570579495,yeast;yeast infect;infect;itch;cream;discharg;vagina;white;itchi;sex
+aids,vaginitis,0.134542051778
+aids,chlamydia,0.184533504092
+aids,gonorrhea,0.233745579068
+aids,syphilis,0.163660771034
+aids,trichomoniasis,0.13206715801
+adenomyosis,bleeding disorders,0.253512756287
+adenomyosis,chlamydia,0.108469623328
+adenomyosis,pid,0.220304354331
+adenomyosis,gonorrhea,0.137262394619
+cancer,vaginitis,0.123624912174
+cancer,breast cancer,0.306333076803
+cancer,family history,0.111579733866
+cancer,ebv infection,0.109114959115
+allergies,asthma,0.14297271104
+amenorrhea,breastfeeding,0.138923937039
+amenorrhea,pregnancy,0.113836081084
+anemia,bleeding disorders,0.164495473314
+appendicitis,inflammatory bowel disease,0.107566665049
+asthma,bronchitis,0.109901458018
+back pain,pregnancy,0.18070728748
+bacterial vaginosis,vaginitis,0.101212753234
+bacterial vaginosis,candidiasis,0.127283609779
+bacterial vaginosis,trichomoniasis,0.212643244284
+bacterial vaginosis,yeast infection,0.141051858286
+vaginitis,candidiasis,0.117382986429
+vaginitis,thrush,0.132752283543
+vaginitis,chlamydia,0.116793973498
+vaginitis,gonorrhea,0.141370475228
+vaginitis,pelvic inflammatory disease,0.12290370068
+vaginitis,trichomoniasis,0.194740508139
+folliculitis,staph,0.158178341822
+high blood pressure,diabetes,0.238519715025
+high blood pressure,hypertension,0.135755347225
+bronchitis,pneumonia,0.207100188875
+flu,common cold,0.106577311943
+flu,sore throat,0.194513540761
+bleeding disorders,gonorrhea,0.100878377923
+candidiasis,sexually transmitted diseases,0.106988592281
+candidiasis,trichomoniasis,0.195334673897
+candidiasis,yeast infection,0.127953631738
+chlamydia,gonorrhea,0.549807800157
+chlamydia,sexually transmitted diseases,0.100434899787
+chlamydia,syphilis,0.176376037402
+chlamydia,trichomoniasis,0.191296872559
+common cold,sore throat,0.124921624156
+diabetes,hypertension,0.171652527512
+ebv infection,genital warts,0.165705132846
+pid,pelvic inflammatory disease,0.191707554742
+genital herpes,outbreaks,0.175427207796
+gonorrhea,sexually transmitted diseases,0.114126023697
+gonorrhea,syphilis,0.262337503511
+gonorrhea,trichomoniasis,0.23532547343
+zoster,shingles,0.301187486971
+infertility,mucus,0.280013155694
+infertility,pregnancy,0.163190542371
+inflammatory bowel disease,pelvic inflammatory disease,0.120187698728
+mucus,pregnancy,0.219461525373
+runny nose,sore throat,0.141418418212
+trichomoniasis,yeast infection,0.112401542996
+sore throat,strep throat,0.158490992342

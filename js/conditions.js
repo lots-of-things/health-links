@@ -179,22 +179,29 @@ function conditions_appear(conditions,probs){
     selected_one=cond;
     $(".list-group-item").removeClass('active');
     $("#list_"+cond.split(' ').join('_')).addClass('active');
-
+    $("#statspot").css("display",'none')
+    $("#statripple").css("display",'block')
     $.ajax({
         url:'statistics',
         type:'post',
         //data:$('form').serialize()+'&condition='+cond,
         data:'condition='+cond,
         success:function(data){
+
           $("#stattitle").html(cond+" facts");
           $("#statspot").html(data);
+
+          setTimeout(function(){
+            $("#statspot").css("display",'block')
+            $("#statripple").css("display",'none')}
+            , 500);
         }
     });
     $.ajax({
         url:'experiences',
         type:'post',
         //data:$('form').serialize()+'&condition='+cond,
-        data:$('form').serialize(),
+        data:$('form').serialize()+'&condition='+cond,
         success:function(data){
           $("#simexp").html(data);
         }

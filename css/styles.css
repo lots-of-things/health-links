@@ -75,7 +75,7 @@ a :hover{
     right: 0;
     top: 0;
     /*background-image:url('http://neverfearfailure.com/wp-content/uploads/2016/03/5-Questions-to-Ask-Yourself-When-Building-a-Health-Plan-678x381.jpg');*/
-    background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/YoungCoupleEmbracing-20070508.jpg/1024px-YoungCoupleEmbracing-20070508.jpg');
+    background-image:url('https://static.pexels.com/photos/139199/pexels-photo-139199.jpeg');
     background-size:cover;
     background-attachment:fixed;
 }
@@ -96,8 +96,8 @@ a :hover{
 #sidebar, #sidebar a {
     height:100%;
     color:#ffffff;
-    background-color:transparent;
-	text-shadow:1px 0 1px #888888;
+    background-color:#333333;
+	text-shadow:0 0 1px #999;
 }
 #sidebar img.logo {
   display:block;

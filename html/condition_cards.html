@@ -1,57 +1,102 @@
 <div class="container" id="cardcontainer">
-<div class="row">
-				<div class="col-sm-6">
-					<div class="thumbnail">
+	<div class="row">
+
+				{% if wiki and not clinic %}
+				<div class="col-sm-4">
+						<div class="thumbnail">
 						<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Wikipedia_mini_globe_handheld.jpg/250px-Wikipedia_mini_globe_handheld.jpg"> -->
 							<div class="caption">
-								<h4>What is {{ condition }}?</h4>
+								<h4>What should I do if I have {{ condition }}?</h4>
 								<p>It's always a good idea to consult with your doctor whenever you have any concerns about your health.
-									 If you believe you may have had exposure to a sexually transmitted disease it's also important that you refrain from any sexual activities with other until you've consulted with a medical professional.</p>
-								<a href="https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Chlamydia_infection|Gonorrhea|Syphilis|AIDS" class="btn btn-default btn-xs" role="button">Learn more</a>
+									 If you believe you may have had exposure to a sexually transmitted disease it's also important that you refrain from any sexual activities until you've consulted with a medical professional.</p>
+								<a href="https://www.healthgrades.com/" class="btn btn-default btn-xs" role="button">Find a medical professional near you.</a>
 						</div>
 					</div>
 				</div>
-
-
-				{% if wiki %}
 				<div class="col-sm-2">
-          <div class="thumbnail">
-            <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Wikipedia_mini_globe_handheld.jpg/250px-Wikipedia_mini_globe_handheld.jpg"> -->
-              <div class="caption">
-                <h4>Wikipedia searches</h4>
-                <p>{{ wiki }}</p>
-                <a href="https://tools.wmflabs.org/pageviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-20&pages=Chlamydia_infection|Gonorrhea|Syphilis|AIDS" class="btn btn-default btn-xs" role="button">Learn more</a>
-            </div>
-          </div>
-        </div>
+					<div class="thumbnail">
+						<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Wikipedia_mini_globe_handheld.jpg/250px-Wikipedia_mini_globe_handheld.jpg"> -->
+							<div class="caption">
+								<h4>Wikipedia searches</h4>
+								<p>{{ wiki['wiki_text']|safe }}</p>
+								<a href="{{ wiki['wiki_ref']}}" class="btn btn-default btn-xs" role="button">Learn more</a>
+						</div>
+					</div>
+				</div>
+				{% elif clinic and not wiki %}
+				<div class="col-sm-4">
+						<div class="thumbnail">
+						<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Wikipedia_mini_globe_handheld.jpg/250px-Wikipedia_mini_globe_handheld.jpg"> -->
+							<div class="caption">
+								<h4>What should I do if I have {{ condition }}?</h4>
+								<p>It's always a good idea to consult with your doctor whenever you have any concerns about your health.
+									 If you believe you may have had exposure to a sexually transmitted disease it's also important that you refrain from any sexual activities until you've consulted with a medical professional.</p>
+								<a href="https://www.healthgrades.com/" class="btn btn-default btn-xs" role="button">Find a medical professional near you.</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 pull-right">
+					<div class="thumbnail">
+						<!-- <img src="https://c1.staticflickr.com/7/6080/6104068209_d134b246f5_b.jpg"> -->
+							<div class="caption">
+								<h4>Frequency of occurence</h4>
+								<p>{{ clinic['clin_text']|safe }}</p>
+								 <a href="{{ clinic['clin_ref'] }}" class="btn btn-default btn-xs" role="button">Learn more at cdc.gov</a>
+						</div>
+					</div>
+				</div>
+				{% else %}
+				<div class="col-sm-6">
+						<div class="thumbnail">
+						<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Wikipedia_mini_globe_handheld.jpg/250px-Wikipedia_mini_globe_handheld.jpg"> -->
+							<div class="caption">
+								<h4>What should I do if I have {{ condition }}?</h4>
+								<p>It's always a good idea to consult with your doctor whenever you have any concerns about your health.
+									 If you believe you may have had exposure to a sexually transmitted disease it's also important that you refrain from any sexual activities until you've consulted with a medical professional.</p>
+								<a href="https://www.healthgrades.com/" class="btn btn-default btn-xs" role="button">Find a medical professional near you.</a>
+						</div>
+					</div>
+				</div>
 				{% endif %}
+{% if forum %}
+	<div class="col-sm-3">
+		<div class="thumbnail">
+			<!-- <img src="https://c1.staticflickr.com/2/1189/5141328136_16d8f73ee7_b.jpg"> -->
+				<div class="caption">
+					<h4>Forum mentions</h4>
+					<p>{{ forum['forum_text']|safe }}</p>
+					 <!-- <a href="{{ forum['forum_ref'] }}" class="btn btn-default btn-xs" role="button">Find out more.</a> -->
+			</div>
+		</div>
+	</div>
+{% endif %}
 </div>
+
+{% if wiki and clinic %}
 <div class="row">
-				{% if clinic %}
+
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Wikipedia_mini_globe_handheld.jpg/250px-Wikipedia_mini_globe_handheld.jpg"> -->
+							<div class="caption">
+								<h4>Wikipedia searches</h4>
+								<p>{{ wiki['wiki_text']|safe }}</p>
+								<a href="{{ wiki['wiki_ref']}}" class="btn btn-default btn-xs" role="button">Learn more</a>
+						</div>
+					</div>
+				</div>
 				<div class="col-sm-4">
 					<div class="thumbnail">
 						<!-- <img src="https://c1.staticflickr.com/7/6080/6104068209_d134b246f5_b.jpg"> -->
 							<div class="caption">
 								<h4>Frequency of occurence</h4>
-								<p>{{ clinic }}</p>
-								 <a href="http://www.cdc.gov/datastatistics/" class="btn btn-default btn-xs" role="button">Learn more at cdc.gov</a>
+								<p>{{ clinic['clin_text']|safe }}</p>
+								 <a href="{{ clinic['clin_ref'] }}" class="btn btn-default btn-xs" role="button">Learn more at cdc.gov</a>
 						</div>
 					</div>
 				</div>
-				{% endif %}
 
-				{% if forum %}
-				<div class="col-sm-4">
-          <div class="thumbnail">
-            <!-- <img src="https://c1.staticflickr.com/2/1189/5141328136_16d8f73ee7_b.jpg"> -->
-              <div class="caption">
-                <h4>Forum mentions</h4>
-                <p>{{ forum }}</p>
-                 <a href="http://www.cdc.gov/datastatistics/" class="btn btn-default btn-xs" role="button">Learn more ata cd</a>
-            </div>
-          </div>
-        </div>
-				{% endif %}
 </div>
+{% endif %}
 
 </div>
